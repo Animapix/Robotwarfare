@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Services;
-using Ánimapix.TileMap;
+using Animapix.TileMap;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -31,7 +31,6 @@ namespace Robotwarfare
         {
             if (inputs.IsJustPressed(Keys.Space)) GenerateNewMap();
 
-            
             // Cursor position
             Tile tile = _tileMap.GetTileFromPoint(inputs.MousePosition());
             if (tile != null)
@@ -39,24 +38,25 @@ namespace Robotwarfare
             else
                 cursorPosition = null;
 
-
             // Pathfinding selection
             if (inputs.IsJustPressed(MouseButton.Left, ButtonState.Released) && inputs.MousePosition().X > 0 && inputs.MousePosition().Y > 0)
             {
-
-                if (startPosition != null && endPosition == null && _tileMap.GetTileFromPoint(inputs.MousePosition()).type == Tile.Type.FLOOR)
+                Tile selectedTile = _tileMap.GetTileFromPoint(inputs.MousePosition());
+                if (selectedTile != null)
                 {
-                    endPosition = _tileMap.GetCoordinatesFromPoint(inputs.MousePosition());
-                    path = AStar.FindPath(((int column, int row))startPosition, ((int column, int row))endPosition, _tileMap);
-                }
-                else
-                {
-
-                    if (_tileMap.GetTileFromPoint(inputs.MousePosition()).type == Tile.Type.FLOOR) 
+                    if (startPosition != null && endPosition == null && selectedTile.type == Tile.Type.FLOOR)
                     {
-                        startPosition = _tileMap.GetCoordinatesFromPoint(inputs.MousePosition());
-                        endPosition = null;
-                        path = null;
+                        endPosition = _tileMap.GetCoordinatesFromPoint(inputs.MousePosition());
+                        path = AStar.FindPath(((int column, int row))startPosition, ((int column, int row))endPosition, _tileMap);
+                    }
+                    else
+                    {
+                        if (selectedTile.type == Tile.Type.FLOOR)
+                        {
+                            startPosition = _tileMap.GetCoordinatesFromPoint(inputs.MousePosition());
+                            endPosition = null;
+                            path = null;
+                        }
                     }
                 }
             }
@@ -94,13 +94,7 @@ namespace Robotwarfare
                 }
             }
 
-
             base.Draw();
-        }
-
-        public override void Unload()
-        {
-            base.Unload();
         }
 
         private void GenerateNewMap()
@@ -110,6 +104,11 @@ namespace Robotwarfare
             endPosition = null;
             startPosition = null;
             path = null;
+        }
+
+        public override void Unload()
+        {
+            base.Unload();
         }
     }
 }

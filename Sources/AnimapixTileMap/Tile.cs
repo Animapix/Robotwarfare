@@ -4,7 +4,7 @@ using Services;
 using System;
 using System.Collections.Generic;
 
-namespace Ánimapix.TileMap
+namespace Animapix.TileMap
 {
     public class Tile
     {
@@ -45,7 +45,7 @@ namespace Ánimapix.TileMap
         public void DrawFilling(SpriteBatch spriteBatch,Color wallsColor, Color floorColor, Vector2 offsetPosition)
         {
             Vector2 center = new Vector2(size / 2, size / 2);
-            Vector2 position = new Vector2(column * size, row * size) + center + offsetPosition;
+            Vector2 position = new Vector2(column * size, row * size) + center + offsetPosition; 
 
             spriteBatch.Draw(_tileSetTexture, position, quads["Square"], floorColor, 0, center, 1, SpriteEffects.None, 0);
             spriteBatch.Draw(_tileSetTexture, position, quads["Square"], floorColor, MathF.PI / 2, center, 1, SpriteEffects.None, 0);

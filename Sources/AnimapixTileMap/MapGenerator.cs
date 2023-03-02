@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ánimapix.TileMap
+namespace Animapix.TileMap
 {
     public static class MapGenerator
     {
@@ -23,6 +23,7 @@ namespace Ánimapix.TileMap
 
             for (int i = 0; i < simulationSteps; i++)
                 map = CellularAutomataProcesses(map, deathLimit, birthLimit);
+
 
             if (IslandsSizeLimit > 0) RemoveRegions(map, true, IslandsSizeLimit);
             if (cavesSizeLimit > 0) RemoveRegions(map, false, cavesSizeLimit);

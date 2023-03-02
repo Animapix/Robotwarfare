@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ánimapix.TileMap
+namespace Animapix.TileMap
 {
     public static class AStar
     {

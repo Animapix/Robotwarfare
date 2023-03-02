@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace Ánimapix.TileMap
+namespace Animapix.TileMap
 {
     public class TileMap
     {
