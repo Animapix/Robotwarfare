@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/DefaultFont.spritefont","C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/bin/DesktopGL/DefaultFont.xnb","FontDescriptionProcessor","SpriteFontContent",2067,13343,0,2555648
+"C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/MonoGame_Logo.png","C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/bin/DesktopGL/MonoGame_Logo.xnb","TextureProcessor","Texture2DContent",33926,2524885,0,077104
+"C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/SelectionCursor.png","C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/bin/DesktopGL/SelectionCursor.xnb","TextureProcessor","Texture2DContent",504,4181,0,0013052
+"C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/TileSet.png","C:/Users/elite/Desktop/RobotWarfareOLD/Sources/Content/bin/DesktopGL/TileSet.xnb","TextureProcessor","Texture2DContent",1500,15445,0,0021622
