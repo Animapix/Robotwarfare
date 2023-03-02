@@ -9,6 +9,20 @@ namespace Animapix.TileMap
         private static List<Node> openList;
         private static List<Node> closedList;
 
+        public static List<(int column, int row)> FindPath(int startColumn,int startRow,int targetColumn, int targetRow, TileMap tileMap)
+        {
+            return FindPath((startColumn, startRow), (targetColumn, targetRow), tileMap);
+        }
+
+        /// <summary>
+        /// 
+        /// 
+        /// <param name="start">tupple of starting position</param>
+        /// <param name="target">tupple of target position</param>
+        /// <code>
+        ///    List<(int column, int row)> path = AStar.FindPath((startColumn, startRow), (targetColumn, targetRow), tileMap);
+        /// </code>
+        /// </summary>
         public static List<(int column, int row)> FindPath((int column, int row)start, (int column, int row) target, TileMap tileMap)
         {
             CreateGraph(tileMap);

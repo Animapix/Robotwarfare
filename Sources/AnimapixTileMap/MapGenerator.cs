@@ -7,6 +7,18 @@ namespace Animapix.TileMap
     {
         private static Random _random = new Random();
 
+        /// <summary>
+        /// Method to generate map.
+        /// 
+        /// <para>columns, rows -> size of map</para>
+        /// <para>fillFactor -> factor of filling map for the first step of generation</para>
+        /// <para>simulationSteps -> smooth generation amount of steps</para>
+        /// <para>cavesSizeLimit, IslandsSizeLimit -> removing small cave or small island, 0 desactivate this fonctionality</para>
+        /// <para>seed -> seed of all generation. null generate random seed</para>
+        /// <code>
+        ///     bool[][] map = Generate(columns, rows, .55f,10, 4, 5, 0, 0, seed)
+        /// </code>
+        /// </summary>
         public static bool[][] Generate(int columns, int rows, float fillFactor = .55f, int simulationSteps = 10, int deathLimit = 4, int birthLimit = 5, int cavesSizeLimit = 0, int IslandsSizeLimit = 0, string seed = null)
         {
             if (seed != null) { _random = new Random(seed.GetHashCode()); }
